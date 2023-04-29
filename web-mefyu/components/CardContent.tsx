@@ -10,7 +10,7 @@ export default function CardContent() {
   }
 
   return (
-    <div className="rounded-lg shadow-sm bg-white overflow-hidden">
+    <div className="shadow-sm bg-white overflow-hidden rounded-md">
       <div className="px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="flex justify-center items-center w-10 h-10 rounded-full border bg-gray-200">
@@ -58,7 +58,7 @@ export default function CardContent() {
           <Image src={"/icons/person.svg"} width={18} height={18} alt="person" />
         </div>
         <form className="flex-1">
-          <div className="w-full border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+          <div className="w-full border border-gray-200 rounded-md bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
             <div className="p-2 pb-0 rounded-t-lg bg-gray-50">
               <label className="sr-only">Your comment</label>
               <TextareaAutosize
