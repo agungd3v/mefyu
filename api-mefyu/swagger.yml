@@ -1,0 +1,8 @@
+openapi: 3.0.0
+info:
+  title: "Mefyu REST API"
+  description: "Mefyu REST API"
+  version: "1.0.0"
+
+servers:
+  - url: "/"
