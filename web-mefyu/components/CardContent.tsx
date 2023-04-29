@@ -17,7 +17,7 @@ export default function CardContent() {
             <Image src={"/icons/person.svg"} width={24} height={24} alt="person" />
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-semibold">Agung Ardiyanto</span>
+            <span className="text-sm font-semibold">Wahid Mustaqim</span>
             <div className="flex gap-1">
               <span className="text-xs text-gray-400">10 jam</span>
               <Image src={"/icons/globe.svg"} width={12} height={12} alt="globe" />
@@ -53,12 +53,12 @@ export default function CardContent() {
           <span className="text-xs font-semibold text-gray-400 leading-3">Bagikan</span>
         </div>
       </div>
-      <div className="px-4 py-2 flex items-start gap-2">
+      <div className="px-4 py-3 flex items-start gap-2">
         <div className="flex justify-center items-center w-8 h-8 rounded-full border bg-gray-200">
           <Image src={"/icons/person.svg"} width={18} height={18} alt="person" />
         </div>
         <form className="flex-1">
-          <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+          <div className="w-full border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
             <div className="p-2 pb-0 rounded-t-lg bg-gray-50">
               <label className="sr-only">Your comment</label>
               <TextareaAutosize
