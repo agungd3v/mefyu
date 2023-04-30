@@ -2,22 +2,13 @@ from __future__ import print_function
 import mysql.connector
 from mysql.connector import errorcode
 from config.database import database
+from database.schema import users, posts
 
 DB_NAME = "mefyu"
 
 TABLES = {}
-
-TABLES["users"] = (
-  "CREATE TABLE `users` ("
-  "  `id` BIGINT NOT NULL AUTO_INCREMENT,"
-  "  `name` VARCHAR(100) NOT NULL,"
-  "  `username` varchar(14) NOT NULL,"
-  "  `email` VARCHAR(50) NOT NULL,"
-  "  `password` VARCHAR(255) NOT NULL,"
-  "  PRIMARY KEY (`id`),"
-  "  UNIQUE (`email`)"
-  ") ENGINE=InnoDB"
-)
+TABLES[users] = users
+TABLES[posts] = posts
 
 cnx = database
 cursor = cnx.cursor()
@@ -44,7 +35,7 @@ except mysql.connector.Error as err:
 for table_name in TABLES:
   table_description = TABLES[table_name]
   try:
-    print("Creating table {}: ".format(table_name), end='')
+    print("Creating table {}: ".format(table_name), end="")
     cursor.execute(table_description)
   except mysql.connector.Error as err:
     if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:

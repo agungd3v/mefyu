@@ -7,7 +7,7 @@ try:
     port = "3306",
     user = "root",
     passwd = "root",
-    database = "mefyu",
+    # database = "mefyu",
     raise_on_warnings = True
   )
 except mysql.connector.Error as err:
