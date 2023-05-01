@@ -1,3 +1,5 @@
+from pathlib import Path
+from uuid import uuid4
 from flask import request, jsonify, make_response
 from werkzeug.utils import secure_filename
 from services.checkcontent import checkf
@@ -8,6 +10,10 @@ def index():
 
 def store():
   content = request.files["content"]
-  content.save("static/" + secure_filename(content.filename))
-  s = checkf("static/" + secure_filename(content.filename))
+  content.filename = str(uuid4()) + Path(secure_filename(content.filename)).suffix
+
+  cs = "static/" + content.filename
+
+  content.save(cs)
+  s = checkf(cs)
   return make_response(jsonify(message = s), 200)

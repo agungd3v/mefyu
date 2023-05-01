@@ -8,7 +8,6 @@ file_to_open = data_folder / "model.h5"
 
 def checkf(fsk):
   c = load_model(file_to_open)
-  original = tf.keras.preprocessing.image.load_img(fsk)
   f = tf.keras.preprocessing.image.load_img(fsk, target_size = (64, 64))
   tensor = tf.keras.preprocessing.image.img_to_array(f)
   tensor = np.expand_dims(tensor, axis = 0)
