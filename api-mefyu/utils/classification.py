@@ -1,11 +1,8 @@
 import tensorflow as tf
 import os
 from tensorflow import keras
-from tensorflow.python.keras import layers, optimizers, Sequential
+from tensorflow.python.keras import Sequential
 from tensorflow.python.keras.layers import Activation , Dropout , Conv2D, MaxPooling2D, Dense, Flatten
-from tensorflow.python.keras.models import load_model
-import matplotlib.pyplot as plt
-import numpy as np
 
 model = Sequential()
 model.add(Conv2D(32, (3, 3), input_shape = (64, 64, 3), activation = "relu"))
@@ -23,8 +20,6 @@ model.add(Dense(units = 128, activation = "relu"))
 model.add(Dropout(0.2))
 model.add(Dense(units = 1, activation = "sigmoid"))
 model.summary()
-
-# print(model)
 
 train_datagen = tf.keras.preprocessing.image.ImageDataGenerator(
   rescale = 1. / 255, 

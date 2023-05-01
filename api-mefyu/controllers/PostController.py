@@ -1,5 +1,6 @@
 from flask import request, jsonify, make_response
 from werkzeug.utils import secure_filename
+from services.checkcontent import checkf
 
 def index():
   message = jsonify(message = "PostController OK")
@@ -8,4 +9,5 @@ def index():
 def store():
   content = request.files["content"]
   content.save("static/" + secure_filename(content.filename))
-  return make_response(jsonify(message = "OK"), 200)
+  s = checkf("static/" + secure_filename(content.filename))
+  return make_response(jsonify(message = s), 200)
