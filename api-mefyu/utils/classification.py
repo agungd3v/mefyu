@@ -53,7 +53,7 @@ test_set = test_datagen.flow_from_directory(
   class_mode = "binary"
 )
 
-with tf.device("/GPU:0"):
-  history = model.compile(optimizer = "adam", loss = "binary_crossentropy", metrics = ["accuracy"])
-  model.fit(training_set, steps_per_epoch = 991//15, epochs = 30, validation_data = test_set, validation_steps = 296//15)
-  model.save("model.h5")
+# with tf.device("/GPU:0"):
+#   history = model.compile(optimizer = "adam", loss = "binary_crossentropy", metrics = ["accuracy"])
+#   model.fit(training_set, steps_per_epoch = 991//15, epochs = 30, validation_data = test_set, validation_steps = 296//15)
+#   model.save("model.h5")
